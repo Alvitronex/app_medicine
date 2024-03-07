@@ -20,20 +20,22 @@ class LoginPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 50,
+              Text(
+                'Sign Up',
+                style: TextStyle(
+                  color: Colors.grey[800],
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+              const SizedBox(height: 25),
 
               //Logo Icon
               const Icon(
-                Icons.lock,
+                Icons.account_circle,
                 size: 100,
               ),
-              const SizedBox(height: 50),
-              Text(
-                'Welcome back you\'ve been missed!',
-                style: TextStyle(color: Colors.grey[700], fontSize: 16),
-              ),
+
               const SizedBox(height: 25),
               MyTextField(
                 controller: usernameController,
@@ -49,18 +51,18 @@ class LoginPage extends StatelessWidget {
               const SizedBox(height: 10),
 
               //password
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Text(
-                      'Forgot Password?',
-                      style: TextStyle(color: Colors.grey[600]),
-                    ),
-                  ],
-                ),
-              ),
+              // Padding(
+              //   padding: const EdgeInsets.symmetric(horizontal: 25.0),
+              //   child: Row(
+              //     mainAxisAlignment: MainAxisAlignment.end,
+              //     children: [
+              //       Text(
+              //         'Forgot Password?',
+              //         style: TextStyle(color: Colors.grey[600]),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               const SizedBox(height: 25),
               MyButton(
                 onTap: singnUserIn,
