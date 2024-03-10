@@ -1,18 +1,22 @@
 import 'package:app_medicine/components/my_button.dart';
 import 'package:app_medicine/components/my_textfield.dart';
+import 'package:app_medicine/pages/LoginPage.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatelessWidget {
-  SignupPage({super.key});
+  SignupPage({Key? key}) : super(key: key);
 
   final usernameController = TextEditingController();
   final passwordController = TextEditingController();
+  final emailController = TextEditingController();
+  final confirmPassword = TextEditingController();
 
   void singnUserIn() {}
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: Center(
@@ -29,9 +33,9 @@ class SignupPage extends StatelessWidget {
               ),
               const SizedBox(height: 25),
 
-//Logo Icon
+              //Logo Icon
               const Icon(
-                Icons.account_box,
+                Icons.account_circle_outlined,
                 size: 100,
               ),
               const SizedBox(height: 50),
@@ -42,9 +46,9 @@ class SignupPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               MyTextField(
-                controller: passwordController,
+                controller: emailController,
                 hintText: 'Email',
-                obscureText: true,
+                obscureText: false,
               ),
               const SizedBox(height: 10),
               MyTextField(
@@ -54,7 +58,7 @@ class SignupPage extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               MyTextField(
-                controller: passwordController,
+                controller: confirmPassword,
                 hintText: 'Confirm Password',
                 obscureText: true,
               ),
@@ -80,22 +84,26 @@ class SignupPage extends StatelessWidget {
               ),
               const SizedBox(height: 50),
 
-              const SizedBox(height: 50),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Do you have a account?',
-                    style: TextStyle(color: Colors.grey[700]),
-                  ),
-                  const SizedBox(width: 4),
-                  const Text(
-                    'Log In',
-                    style: TextStyle(
-                        color: Colors.blue, fontWeight: FontWeight.bold),
-                  ),
-                ],
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      'Do you have an account?',
+                      style: TextStyle(color: Colors.grey[700]),
+                    ),
+                    const SizedBox(width: 4),
+                    const Text(
+                      'Log In',
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
