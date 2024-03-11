@@ -1,7 +1,6 @@
 import 'package:app_medicine/components/my_button.dart';
 import 'package:app_medicine/components/my_textfield.dart';
 import 'package:app_medicine/components/square_tile.dart';
-import 'package:app_medicine/pages/SignupPage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
