@@ -1,6 +1,7 @@
 import 'package:app_medicine/components/my_button.dart';
 import 'package:app_medicine/components/my_textfield.dart';
 import 'package:app_medicine/components/square_tile.dart';
+import 'package:app_medicine/pages/SignupPage.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -117,31 +118,31 @@ class LoginPage extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 50),
-                // GestureDetector(
-                //   onTap: () {
-                //     Navigator.push(
-                //       context,
-                //       MaterialPageRoute(
-                //         builder: (context) => SignupPage(),
-                //       ),
-                //     );
-                //   },
-                // child:
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Not a member?',
-                      style: TextStyle(color: Colors.grey[700]),
-                    ),
-                    const SizedBox(width: 4),
-                    const Text(
-                      'Register now',
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                  // ),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => SignupPage(),
+                      ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        'Not a member?',
+                        style: TextStyle(color: Colors.grey[700]),
+                      ),
+                      const SizedBox(width: 4),
+                      const Text(
+                        'Register now',
+                        style: TextStyle(
+                            color: Colors.blue, fontWeight: FontWeight.bold),
+                      ),
+                    ],
+                    // ),
+                  ),
                 ),
               ],
             ),
